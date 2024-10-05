@@ -1,13 +1,13 @@
 # Mustache example layouts
 
-This repository contains some [mustache](https://mustache.github.io/) example [layouts](/layouts).
+Templates can often reuse styling. It can be practical to have some reusable layouts to prevent repetitive work. This repository contains some [mustache](https://mustache.github.io/) example [layouts](/layouts) following the mustache template syntax.
 
 - [a4.html](/layouts/a4.html) - A simple layout for printing a4 pages with a margin and justified content.
 - [email.html](/layouts/email.html) - A simple email layout with inline CSS styles based on a HTML table element.
 - [pagedjs.html](/layouts/pagedjs.html) - A layout for printing paginated HTML content with page numbers.
 - [pagedjs-toc.html](/layouts/pagedjs-toc.html) - A layout for printing paginated HTML content with page numbers and a table of contents. A table of contents is created for all H2 and H3 elements.
 
-**Note:** These mustache example layouts contain a [mustache partial](https://github.com/janl/mustache.js?tab=readme-ov-file#partials) named `template`. Use this partial to provide content.
+**Note:** These example layouts contain a [mustache partial](https://github.com/janl/mustache.js?tab=readme-ov-file#partials) named `template`. Use this partial to provide content.
 
 ## Typesetting with CSS
 
@@ -22,13 +22,20 @@ Browsers provide the following CSS styles for typesetting.
 
 ## Paged.js
 
-Both [pagedjs.html](/layouts/pagedjs.html) and [pagedjs-toc.html](/layouts/pagedjs-toc.html) use [paged.js](https://pagedjs.org) for paginating content. Paged.js is an open-source library to paginate HTML content for printing. This library is used to design books with HTML and CSS.
+Both [pagedjs.html](/layouts/pagedjs.html) and [pagedjs-toc.html](/layouts/pagedjs-toc.html) are based on [paged.js](https://pagedjs.org) for paginating content. Paged.js is an open-source library to paginate HTML content for printing. This library is used to design books with HTML and CSS.
 
 <https://github.com/pagedjs/pagedjs>\
 <https://ashok-khanna.medium.com/beautiful-pdfs-from-html-9a7a3c565404>\
 <https://www.adamhyde.net/some-pagedjs-info>
 
 ## Getting started
+
+### Npm commands
+
+See [package.json](/package.json) for scripts to build the mustache example layouts.
+
+- Run `npm run build` to build layouts from source code.
+- Run `npx prettier . --check` or `npx prettier . --write` to format code using prettier (an opinionated formatter).
 
 ### Source code
 
@@ -42,13 +49,6 @@ Source code for the example layouts is provided in separate files for HTML, CSS 
 
 - [src/pagedjs](/src/pagedjs) contains source code for [pagedjs.html](/layouts/pagedjs.html) and [pagedjs-toc.html](/layouts/pagedjs-toc.html)
 
-**Note:** These layouts use CSS style `hyphens: auto` and HTML attribute `lang="EN"` for English hyphenation rules.
+**Note:** The example layouts use CSS style `hyphens: auto` and HTML attribute `lang="EN"` for English hyphenation rules.
 
 **Note 2:** Both [pagedjs.html](/layouts/pagedjs.html) and [pagedjs-toc.html](/layouts/pagedjs-toc.html) set a boolean `window.readyForPdf` to `true` when paged.js finishes rendering. Wait for this flag to be set before rendering a pdf with [Puppeteer](https://pptr.dev/) or [Playwright](https://playwright.dev/).
-
-### Npm commands
-
-See [package.json](/package.json) for scripts to build the mustache example layouts.
-
-- Run `npm run build` to build layouts from source code.
-- Run `npx prettier . --check` or `npx prettier . --write` to format code using prettier (an opinionated formatter).
