@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "npm run build:a4 && npm run build:email && npm run build:pagedjs && npm run build:pagedjs-toc",
+    "build:a4": "npm run inliner src/a4/a4.html layouts/a4.html",
+    "build:email": "npm run juice src/email/email.html layouts/email.html",
+    "build:pagedjs": "npm run inliner src/pagedjs/pagedjs.html layouts/pagedjs.html",
+    "build:pagedjs-toc": "npm run inliner src/pagedjs/pagedjs-toc.html layouts/pagedjs-toc.html",
+    "juice": "juice",
+    "inliner": "node web-resource-inliner.js"
+  },
+  "devDependencies": {
+    "juice": "^11.0.0",
+    "web-resource-inliner": "^7.0.0",
+    "prettier": "^3.3.3"
+  }
+}

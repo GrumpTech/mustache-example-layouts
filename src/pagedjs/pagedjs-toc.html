@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{htmlTitleTag}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles-toc.css" />
+    <link rel="stylesheet" href="./preview.css" />
+    <script src="./paged.polyfill.min.js"></script>
+    <script src="./title.js"></script>
+    <script src="./toc.js"></script>
+    <script src="./ready.js"></script>
+  </head>
+  <body>
+    <div id="title-page">
+      <h1>{{documentTitle}}</h1>
+    </div>
+    <div id="table-of-contents">
+      <h1>Table of contents</h1>
+      <nav id="toc-content"></nav>
+    </div>
+    <div id="content">{{> template}}</div>
+  </body>
+</html>
